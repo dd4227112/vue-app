@@ -7,9 +7,12 @@
     <h1>Form handling</h1>
     <div class="container">
         <h1>Contact Us</h1>
-        <form @submit="submitForm" method="POST">
+        <form @submit.prevent="submitForm" method="POST"> <!--prevent modifier is the sama as e.preventDefault(); on submit -->
             <label for="name">Name:</label>
-            <input type="number" id="name" name="name" v-model.number="formValue.name" required>
+            <input type="text" id="name" name="name" v-model.trim="formValue.name" required>
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" v-model.number.lazy="formValue.age" required>
+
 
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" v-model="formValue.email" required>
@@ -79,7 +82,7 @@
                 </label>
             </div>
             <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" cols="50" v-model="formValue.message" required></textarea>
+            <textarea @keyup.down="submitForm" id="message" name="message" rows="4" cols="50" v-model="formValue.message" required></textarea> <!-- submit form on pressing enter key on  this input-->
 
             <!-- <input type="submit" value="Submit"> -->
             <button type="submit" v-bind:style="button">Submit</button>
@@ -102,7 +105,8 @@ export default {
                 jobLocation: [],
                 isSubscribed: "no",
                 interests: [],
-                gender: ''
+                gender: '',
+                age: null
             },
             button: {
                 width: '100%',
@@ -117,8 +121,7 @@ export default {
         }
     },
     methods: {
-        submitForm(e) {
-            e.preventDefault();
+        submitForm() {
             console.log(this.formValue);
         }
     }
@@ -155,8 +158,7 @@ label {
     color: #555;
 }
 
-input[type="text"],
-input[type="email"],
+input,
 select,
 textarea {
     width: 100%;
