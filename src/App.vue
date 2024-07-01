@@ -1,19 +1,36 @@
 <template>
+    <h1>TemplateRef</h1>
     <div>
-        <h1>Teleport Component</h1>
-        <!-- we are moving this component to root node with id = portal-root instead of id = app -->
-        <Teleport to="#portal-root">
-            <PortalComponent />
-        </Teleport>
+        <TemplateRef />
     </div>
+    <div>
+        <PostList />
+    </div>
+    <div>
+        <ResidentComponent />
+    </div>
+    <div>
+        <CreatePost />
+    </div>
+
+
+
 </template>
 
 <script>
-import PortalComponent from './components/PortalComponent.vue'
+import ResidentComponent from './components/ResidentComponent.vue';
+import PostList from './components/PostList.vue';
+import CreatePost from './components/CreatePost.vue';
+import TemplateRef from './components/TemplateRef.vue'
+
+
 export default {
     name: "App",
     components: {
-        PortalComponent
+        PostList,
+        ResidentComponent,
+        CreatePost,
+        TemplateRef
     }
 
 }
