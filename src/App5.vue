@@ -154,7 +154,8 @@ export default {
                 console.log(`The full movie info is name ${this.movie} titled ${newValue.title} acted by ${newValue.actor}`)
             },
             deep: true
-        }, movieLists: {
+        },
+        movieLists: {
             handler(value) {
                 console.log(`The movie list is ${value}`)
             },

@@ -1,37 +1,24 @@
 <template>
     <h1>TemplateRef</h1>
-    <div>
-        <TemplateRef />
-    </div>
-    <div>
-        <PostList />
-    </div>
-    <div>
-        <ResidentComponent />
-    </div>
-    <div>
-        <CreatePost />
-    </div>
-
-
-
+    <replace-data />
+    <replace-method />
+    <VModel />
+    <computed-component/>
+    <watch-component/>
 </template>
 
 <script>
-import ResidentComponent from './components/ResidentComponent.vue';
-import PostList from './components/PostList.vue';
-import CreatePost from './components/CreatePost.vue';
-import TemplateRef from './components/TemplateRef.vue'
+import ComputedComponent from './components/ComputedComponent.vue'
+import ReplaceData from './components/ReplaceData.vue'
+import ReplaceMethod from './components/ReplaceMethod.vue'
+import VModel from './components/VModel.vue'
+import WatchComponent from './components/WatchComponent.vue'
 
 
 export default {
+    components: { ReplaceData, ReplaceMethod, VModel, ComputedComponent, WatchComponent },
     name: "App",
-    components: {
-        PostList,
-        ResidentComponent,
-        CreatePost,
-        TemplateRef
-    }
+
 
 }
 </script>
