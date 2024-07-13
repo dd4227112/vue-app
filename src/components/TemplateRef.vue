@@ -21,8 +21,18 @@
 
 <script>
 import axios from 'axios';
+import { ref, onMounted } from 'vue'
 export default {
     name: "TemplateRef",
+    setup() {
+        const usernameInput = ref(null)
+        onMounted(()=>{
+            usernameInput.value.focus()
+        })
+        return {
+            usernameInput
+        }
+    },
     data() {
         return {
             postData: {
@@ -31,9 +41,9 @@ export default {
             }
         }
     },
-    mounted() {
-        this.$refs.usernameInput.focus();
-    },
+    // mounted() {
+    //     this.$refs.usernameInput.focus();
+    // },
     methods: {
         CreatePost() {
             const data = this.postData

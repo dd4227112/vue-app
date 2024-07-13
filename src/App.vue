@@ -1,24 +1,21 @@
 <template>
-    <h1>TemplateRef</h1>
-    <replace-data />
-    <replace-method />
-    <VModel />
-    <computed-component/>
-    <watch-component/>
+    <h1>Replacing Compostion API cont...</h1>
+    <!-- <tab-a /> -->
+    <!-- <lifecycle-hook/> -->
+    <IncrementClickMixins />
+    <IncrementHoverMixin />
 </template>
 
-<script>
-import ComputedComponent from './components/ComputedComponent.vue'
-import ReplaceData from './components/ReplaceData.vue'
-import ReplaceMethod from './components/ReplaceMethod.vue'
-import VModel from './components/VModel.vue'
-import WatchComponent from './components/WatchComponent.vue'
 
+<script>
+import IncrementClickMixins from './components/IncrementClickMixins.vue'
+import IncrementHoverMixin from './components/IncrementHoverMixin.vue'
+// import LifecycleHook from './components/LifecycleHook.vue'
+// import TabA from './components/TabA.vue'
 
 export default {
-    components: { ReplaceData, ReplaceMethod, VModel, ComputedComponent, WatchComponent },
+    components: { IncrementClickMixins, IncrementHoverMixin },
     name: "App",
-
 
 }
 </script>
